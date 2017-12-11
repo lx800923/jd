@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="js/konva.min.js">
+</script>
+<script>
+function CircText(){
+	this._init();
+	
+	}
+CircText.prototype={
+	_init:function(){
+		alert("init");
+		},
+	_aop:function(){
+		alert("aop");
+		}
+	}
+	
+	var cat=new CircText();
+    cat._aop();
+</script>
+</head>
+
+<body>
+</body>
+</html>

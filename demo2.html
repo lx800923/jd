@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>
+*{margin:0;padding:0;}
+.demo{width:1030px;
+       margin:50px auto;}
+	   .list{
+	  width:286px;
+	  height:191px;
+	  border-radius:15px;
+	 overflow:hidden;float:left;
+	 margin-left:20px; position:relative;
+	   }
+	   .list>img{z-index:0;}
+	   .tu2 img{ width:300px;z-index:1;}
+	   .tu2{z-index:1;position:absolute; top:0;left:0;transform:rotateZ(-100deg);transform-origin:left top;transition:all 1s linear;}
+	   .list:hover .tu2{transform:rotateZ(0deg);}
+</style>
+
+<body>
+<div class="demo">
+<div class="list">
+<img alt="" src="img/tu.png"/>
+<div class="tu2">
+<img alt="" src="img/tu2.png"/>
+</div>
+</div>
+<div class="list">
+<img alt="" src="img/tu.png"/>
+<div class="tu2">
+<img alt="" src="img/tu2.png"/>
+</div>
+</div>
+<div class="list">
+<img alt="" src="img/tu.png"/>
+<div class="tu2">
+<img alt="" src="img/tu2.png"/>
+</div>
+</div>
+</div>
+
+</body>
+</html>

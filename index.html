@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+ <link href="css/base.css" rel="stylesheet">
+ <link href="css/jd_index.css" rel="stylesheet">
+<title>无标题文档</title>
+
+<script src="js/jquery-3.2.1.min.js">
+</script>
+<script>
+$(function(){
+	//把ul的长度设置成所有li之和的长度
+	var li_sum_w=0;
+	$(".jd_secondkill .product_bot ul li").each(function(index, element) {
+        $el=$(element);
+		li_sum_w+=$el.width();
+    });
+	
+	$(".jd_secondkill .product_bot ul").css("width",li_sum_w+5);
+	$(".jd_secondkill .product_bot").css("overflow-x","scroll");
+	//倒计时
+	var h=0.5;
+	var sec=h*3600;
+	var tid=setInterval(function(){
+		var in_h=Math.floor(sec/3600);
+		var in_h_l=Math.floor(in_h/10);
+		var in_h_r=in_h%10;
+		$(".num").eq(0).text(in_h_l);
+		$(".num").eq(1).text(in_h_r);
+		var in_m=Math.floor((sec-in_h*3600)/60);
+		var in_m_l=Math.floor(in_m/10);
+		var in_m_r=in_m%10;
+		$(".num").eq(2).text(in_m_l);
+		$(".num").eq(3).text(in_m_r);
+		var in_sec=sec-in_h*3600-in_m*60;
+		var in_sec_l=Math.floor(in_sec/10);
+		var in_sec_r=in_sec%10;
+		$(".num").eq(4).text(in_sec_l);
+		$(".num").eq(5).text(in_sec_r);
+		if(sec==0){tid.stop();}
+		sec--;
+		},1000);
+	
+	
+	});
+</script>
+</head>
+
+<body>
+<!--大盒子-->
+<div class="jd_layout">
+<!--搜索-->
+<header class="jd_header">
+  <div class="jd_header_box">
+  <a href="#" class="icon_logo"><img src="img/jd_head.png" alt="..."/>
+  </a>
+  <form action="#">
+    <span class="icon_search"><img src="img/s21.png" alt="..." /></span>
+  <input type="search" placeholder="搜索"/>
+  
+  </form>
+  <a href="#" class="login">登录</a>
+  </div>
+</header>
+<main class="jd_product">
+<!--midle-->
+<div class="mid">
+   <ul class="clearfix">
+   <li><a href="#"><img src="img/jd1.png" alt="..."/></a></li>
+   <li><a href="#"><img src="img/jd2.png" alt="..."/></a></li>
+   <li><a href="#"><img src="img/jd1.png" alt="..."/></a></li>
+   <li><a href="#"><img src="img/jd1.png" alt="..."/></a></li>
+   <li><a href="#"><img src="img/jd1.png" alt="..."/></a></li>
+   <li><a href="#"><img src="img/jd1.png" alt="..."/></a></li>
+   <li><a href="#"><img src="img/jd1.png" alt="..."/></a></li>
+   <li><a href="#"><img src="img/jd2.png" alt="..."/></a></li>
+   </ul>
+   </div>
+<section class="jd_product_box jd_secondkill">
+   <div class="product_top no_bar">
+       <div class="jd_secondkill_left">
+         <span class="sk_icon"></span>
+         <h4 class="sk_name">掌上秒杀</h4>
+         <span class="num">0</span>
+         <span class="num">0</span>
+         <span class="str">:</span>
+         <span class="num">0</span>
+         <span class="num">0</span>
+         <span class="str">:</span>
+         <span class="num">0</span>
+         <span class="num">0</span>
+          
+       </div>
+       <div class="jd_secondkill_right">
+         <a href="#">更多...</a>
+       </div>
+   
+   
+   </div>
+   
+   
+  
+ <!--bot--> 
+   <div class="product_bot">
+     <ul class="clearfix">
+     <li><a href="#"><img src="img/jd2.png" alt="..."/></a>
+          <p class="now_price">&yen;28:00</p>
+          <p class="old_price">&yen;37:00</p>
+     </li>
+     <li><a href="#"><img src="img/jd2.png" alt="..."/></a>
+          <p class="now_price">&yen;28:00</p>
+          <p class="old_price">&yen;37:00</p>
+     </li>
+     <li><a href="#"><img src="img/jd2.png" alt="..."/></a>
+           <p class="now_price">&yen;28:00</p>
+          <p class="old_price">&yen;37:00</p>
+     </li>
+      <li><a href="#"><img src="img/jd2.png" alt="..."/></a>
+           <p class="now_price">&yen;28:00</p>
+          <p class="old_price">&yen;37:00</p>
+     </li>
+     </ul>
+   </div>
+</section>
+
+<section class="jd_product_box super">
+   <div class="product_top ">
+   <h3>超值购</h3>
+   </div>
+   <div class="product_bot clearfix">
+     <div class="product_bot_l">
+     <a href="#"><img src="img/web_img/shjizhuanx.png" alt="..."/></a>
+     </div>
+     <div class="product_bot_r">
+      <a href="#"><img src="img/web_img/shgou.png" alt="..."/></a>
+            <a href="#"><img src="img/web_img/tuangou.png" alt="..."/></a>
+     </div>
+   
+   
+   </div>
+</section>
+
+<section class="jd_product_box">
+   <div class="product_top">
+   <h3>热门活动</h3>
+   </div>
+   <div class="product_bot">
+   </div>
+</section>
+</main>
+<div class="js clearfix ">
+  <div class="js_l">
+     <div class="js_l_l clearfix">&yen;:</div>
+     <div class="js_l_r">
+       <p>所有商品价格合计：</p>
+       <p>180.00元</p>
+     </div>
+  </div>
+  <div class="js_r">
+     <a href="#">结算(5)</a>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

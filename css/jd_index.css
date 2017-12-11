@@ -1,0 +1,244 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+background-color:#e0e0e0;
+position:relative;	
+	}
+.jd_layout{
+max-width:640px;
+min-width:300px;
+margin:0 auto;
+position:relative;	
+
+	
+	}
+	
+
+.jd_header{
+
+   height:40px;
+   position:fixed;
+   top:0;
+   left:0;
+	width:100%;
+
+	}
+.jd_header > .jd_header_box{
+	max-width:640px;
+	min-width:300px;
+	background-color:rgba(201,21,35,0.85);
+	height:40px;
+	margin:0 auto;
+	position:relative;
+	}
+	
+.jd_header > .jd_header_box > .icon_logo{
+display:block;
+width:69px;
+height:40px;
+position:absolute;
+
+top:0;
+left:0px;	
+	
+	}
+.jd_header form{
+
+
+padding-left:75px;
+padding-right:55px;
+position:relative;
+	
+
+	
+	}
+.jd_header form .icon_search{
+	
+	position:absolute;
+	top:0;
+	left:77px;
+	
+	}
+.jd_layout >.jd_header > .jd_header_box > form > input{width:100%;
+                       height:30px;
+					   margin-top:5px;
+					   border-radius:15px;
+					   padding-left:35px;
+					  }
+
+.jd_header .login{
+	display:block;
+	position:absolute;
+	right:12px;
+	top:0;
+	height:40px;
+	line-height:40px;
+	font-size:18px;
+	font-weight:bold;
+	color:#fff;
+	}
+
+.jd_product{margin:45px 5px;}
+.jd_product .jd_product_box{
+	box-shadow:0 0 1px 1px #e0e0e0;
+	margin-top:8px;
+	background-color:#fff;
+	
+	}
+.jd_product .jd_product_box .product_top{
+	height:32px;
+	border-bottom:1px solid #e0e0e0;
+	position:relative;
+	}
+.jd_product .jd_product_box .product_top h3{
+	font-size:15px;
+	color:#666;
+    line-height:32px;
+	margin-left:15px;
+	font-weight:inherit;/*取消粗体*/
+	
+	
+	
+	
+	
+	
+	}
+.jd_product .jd_product_box .product_top h3::before{
+	content:"";
+	width:3px;
+	height:12px;
+	background-color:red;
+    display:block;
+	position:absolute;
+	top:10px;
+	left:8px;
+	
+	}
+.jd_product .jd_product_box .product_top.no_bar{
+    border-bottom:none;	
+	}
+.jd_product .jd_product_box .product_bot{}
+
+
+.jd_secondkill{}
+.jd_secondkill .jd_secondkill_left{
+	float:left;}
+.jd_secondkill .jd_secondkill_left .sk_icon{
+     background:url(../img/xianshi.png) no-repeat;
+	 background-size:26px 26px;
+	 display:block;
+	 height:26px;
+	 width:26px;
+	 float:left;
+	 margin-top:3px;
+	 
+	}
+.jd_secondkill  .jd_secondkill_left .sk_name{
+float:left;color:red;margin-left:0;line-height:32px;
+margin-right:5px;text-align:center;
+	}
+	.jd_secondkill .jd_secondkill_right{
+	float:right;
+	line-height:32px;}
+.jd_secondkill span{line-height:32px;font-size:15px;font-family:Arial, Helvetica, sans-serif;}	
+.jd_secondkill .num{background-color:black;color:white;}
+/*mid*/
+.mid{width:100%;background-color:#fff;}
+.mid  ul{width:100%;
+         list-style:none;
+		 
+
+}
+.mid  ul li{width:25%;
+            
+float:left;
+}
+.mid  ul li a{display:block;margin:0 auto;}
+.mid  ul li a img{width:64%;display:block;margin:0 auto;}
+
+
+/*bot*/
+.jd_secondkill .product_bot{width:100%;}
+
+.jd_secondkill .product_bot ul{
+	
+	list-style:none;
+	
+	
+	}
+.jd_secondkill .product_bot ul li{
+	 
+	 float:left;
+	 
+	 border-right:1px solid #e0e0e0;
+	 text-align:center;
+	}
+.jd_secondkill .product_bot ul li:last-child{
+	border-right:none;
+	}
+	.jd_secondkill .product_bot ul li img{
+	  width:64%;	
+	  margin-top:10px;
+		}
+	.jd_secondkill .product_bot ul li .now_price{
+		font-size:15px;
+		color:red;
+		}
+		.jd_secondkill .product_bot ul li .old_price{
+		font-size:15px;
+		color:#666;
+		text-decoration:line-through;
+		}
+/*超值购*/
+
+
+.super .product_bot_l,.super .product_bot_r{
+     width:49.5%;
+
+    border-right:1px solid #e0e0e0;
+	float:left;
+	}
+.super .product_bot_l{}
+.super  img{margin:0 auto;display:block;width:100%;}
+.super .product_bot_r{}
+
+.js{width:100%;
+
+  max-width:640px;
+min-width:300px;
+margin:0 auto;
+
+	 position:fixed;
+	 
+	 bottom:0;}
+.js > .js_l{float:left;
+            background-color:rgba(0,0,0,0.8);
+			width:70%;
+			height:100%;
+			color:#fff;
+			
+			}
+           
+.js > .js_l > .js_l_l{margin-right:20px;
+                      margin-left:10px;
+					  font-size:26px;
+			          line-height:62px;}
+.js > .js_l > .js_l_r{}
+.js > .js_l > .js_l_r p{margin-top:8px;
+                        font-size:18px;}	
+
+.js > .js_r{float:right;
+           height:100%;
+		   width:30%;
+		   background-color:red;
+		   color:white;
+		   font-size:26px;
+		   text-align:center;
+		   line-height:62px;}
+.js > .js_l{float:left;}
+.js > .js_r a{color:#fff;
+display:block;
+height:100%;
+width:100%;
+font-weight:bold;}
+.js > .js_l div{float:left;}

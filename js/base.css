@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+*,::before,after{
+  margin:0;
+  padding:0;
+ -webkit-tap-hightlight-color:transparent;
+	
+	}
+

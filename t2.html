@@ -1,0 +1,444 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width-device-width,init-scale=1.0,user-scalable=no">
+<title>无标题文档</title>
+<style>
+header{background:#9F9;}
+.item{margin-top:5px;}
+.linear{width:180px;height:50px;margin:auto;}
+.item:nth-child(1) .linear{background-image:linear-gradient(yellow,red,green);}
+.item:nth-child(2) .linear{background-image:linear-gradient(0,yellow,red,green);}
+.item:nth-child(3) .linear{background-image:linear-gradient(90deg,yellow 10%,green 10%);}
+li{list-style:none;width:200px;height:200px;background-color:pink;text-align:center;line-height:200px;}
+ul{padding:0;border:1px solid;}
+#buju .item:nth-child(1) ul{display:flex;flex-direction:column-reverse;}
+#buju .item:nth-child(1) li{}
+#buju .item:nth-child(2) ul{display:flex;justify-content:flex-start;}
+#buju .item:nth-child(3) ul{display:flex;justify-content:flex-end;}
+#buju .item:nth-child(4) ul{display:flex;justify-content:space-around;}
+#buju .item:nth-child(5) ul{display:flex;justify-content:space-between;}
+#buju .item:nth-child(6) ul{display:flex;}
+#buju .item:nth-child(6) li{flex:1;border:1px solid;}
+section:nth-child(5){border:1px solid;}
+.layout{display:flex;
+flex-direction:column;height:600px;justify-content:space-between;width:800px;}
+.layout .header{height:60px;text-align:center;line-height:60px;background:green;transition:transform 1s;}
+.layout .header:hover{transform:rotate(360deg);}
+.layout .main{background:blue;flex:1;display:flex;}
+.layout .footer{background:red;height:60px;text-align:center;line-height:60px;}
+.main .aside{flex:1;background:yellow;
+}
+.main .content{flex:2;}
+.main div{text-align:center;line-height:300px;}
+.threed{border:4px red solid;background:green;}
+.threed img{transform-origin:left top;border:2px solid;}
+.threed img:hover{transform:rotateZ(135deg);transition:all 4s; }
+.heart{height:200px;width:200px;background:yellow;margin:100px auto;position:relative;border:1px solid;}
+.left{width:200px;height:200px;position:absolute;left:-80px;background-color:red;}
+.right{width:200px;height:200px;position:absolute;right:-80px;background-color:red;}
+.bottom{width:200px;height:200px;position:absolute;bottom:-79px;background-color:red;transform:rotateZ(45deg);}
+.left,.right{border-radius:50% 50%;}
+.left,.right,.bottom{animation:move 2s infinite;}
+@keyframes move{
+	0%{transform:scale(0.9) rotateZ(45deg);}
+	50%{transform:scale(1.2) rotateZ(45deg);}
+	100%{transform:scale(1.1) rotateZ(45deg);}
+	}
+.clock{background:green;height:200px;width:200px;border:10px solid;border-radius:110px;margin:10px auto;position:relative;}
+.line1,.line2,.line3,.line4,.line5,.line6{width:4px;height:200px;background-color:#ccc;position:absolute;left:50%;margin-left:-2px;}
+.line2{transform:rotate(30deg);}
+.line3{transform:rotate(60deg);}
+.line4{transform:rotate(90deg);}
+.line5{transform:rotate(120deg);}
+.line6{transform:rotate(150deg);}
+.line1,.line4{width:6px;margin-left:-3px;background-color:#000;}
+.dot{width:30px;height:30px;background-color:black;position:absolute;top:50%;left:50%;border-radius:50%;margin:-15px 0 0 -15px;z-index:1;}
+.cover{width:170px;height:170px;background-color:green;border-radius:50%;position:absolute;top:50%;left:50%;margin:-85px 0 0 -85px;}
+.hour{height:50px;width:4px;background-color:black;position:absolute;top:50%;left:50%;margin-left:-2px;}
+.minus{height:70px;width:6px;background-color:black;position:absolute;top:50%;left:50%;margin-left:-3px;margin-top:-70px;animation:move2 3600s infinite steps(60);transform-origin:bottom;}
+.seconds{height:4px;width:70px;background-color:red;position:absolute;top:50%;left:50%;margin-top:-2px;animation:move2 60s infinite steps(60); transform-origin:left;background-position:center;}
+@keyframes move2{
+	0%{transform:rotate(-360deg);
+	  
+	}	
+	 
+	}
+	
+.main{width:800px;height:600px;background-color:#2480bd;}
+.main .text{}
+.main span{width:128px;height:144px;background-color:yellow;display:inline-block;margin-top:300px;background:url(img/360.png) no-repeat -380px  -430px;}
+
+/*滚动菜单*/
+nav{margin-top:10px;margin-left:100px;
+    display:inline-block;box-sizing:border-box;text-align:center;}
+nav a{display:inline-block;box-sizing:border-box;text-decoration:none;}
+nav a span{line-height:40px;color:white;font-weight:bold;
+background-color:#2195de;
+display:inline-block;padding:0 25px;position:relative;
+transform-style:preserve-3d;
+transition:all 1s;
+}
+nav a span:hover{transform-origin:top;transform:rotateX(90deg) translateY(-30px);}
+nav a span::after{
+content:attr(data-hover);
+position:absolute;
+top:100%;
+left:0;	
+
+text-align:center;
+background-color:green;
+width:100%;
+height:100%;
+transform-origin:top;
+transform:rotateX(-90deg);
+	}
+	/*立方体*/
+	.all{margin:40px 100px;width:300px;height:300px;position:relative;perspective:700px;transform-style:preserve-3d;transform:rotateY(30deg);}
+	.front{width:300px;height:300px;background-color:rgba(0,255,102,.6);}
+	.back{
+	width: 300px;
+	height: 300px;
+	background-color: rgba(255,255,102,.6);
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform:translateZ(-300px);
+}
+.right1{width: 300px;
+	height: 300px;
+	background-color: rgba(255,0,102,.6);
+	position: absolute;
+	top: 0;
+	left: 100%;
+	transform-origin:left;
+	transform:rotateY(90deg);
+	}
+	.bottom1{width: 300px;
+	height: 300px;
+	background-color: rgba(102,0,102,.6);
+	position: absolute;
+	top: 100%;
+	left: 0;
+	transform-origin:top;
+	transform:rotateX(-90deg);}
+	
+	
+	.canvas{border:1px solid;}
+	
+</style>
+</head>
+
+<body>
+
+<header>
+<h3>线型渐变</h3>
+</header>
+<section>
+<div class="item">
+<div class="linear">
+
+</div>
+</div>
+
+
+<div class="item">
+<div class="linear">
+
+</div>
+</div>
+
+<div class="item">
+<div class="linear">
+
+</div>
+</div>
+
+
+
+</section>
+<header>
+<h3>伸缩布局</h3>
+</header>
+<section id="buju">
+<div class="item">
+<div class="flex">
+<ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ul>
+
+</div>
+</div>
+
+<div class="item">
+<div class="flex">
+<ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ul>
+
+</div>
+</div>
+
+<div class="item">
+<div class="flex">
+<ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ul>
+
+</div>
+</div>
+
+<div class="item">
+<div class="flex">
+<ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ul>
+
+</div>
+</div>
+
+<div class="item">
+<div class="flex">
+<ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ul>
+
+</div>
+</div>
+
+<div class="item">
+<div class="flex">
+<ul>
+<li>1</li>
+<li>2</li><!--删除后每个li的布局还是1:1-->
+<li>3</li>
+</ul>
+
+</div>
+</div>
+
+</section>
+<section>
+<header>经典网页布局</header>
+<div class="layout">
+  <div class="header">
+  头部
+  </div>
+  <div class="main">
+  <div class="aside">左面</div>
+  <div class="content">右面</div>
+   </div>
+  <div class="footer">底部</div>
+</div>
+</section>
+
+<section>
+<header>3d</header>
+<div class="threed">
+<img alt="11" src="file:///F|/html/image/bannar/1.png"/>
+</div>
+</section>
+
+<section>
+<header>跳动的心</header>
+<div class="heart">
+<span class="left"></span>
+<span class="right"></span>
+<span class="bottom"></span>
+</div>
+</section>
+
+<section>
+<header>钟表</header>
+<div class="clock">
+   <div class="line1"></div>
+    <div class="line2"></div>
+     <div class="line3"></div>
+      <div class="line4"></div>
+       <div class="line5"></div>
+        <div class="line6"></div>
+         
+          <div class="dot"></div>
+          <div class="cover"></div>
+            <div class="hour"></div>
+            <div class="minus"></div>
+             <div class="seconds"></div>
+</div>
+</section>
+
+<section>
+<header>360</header>
+<div class="main">
+<div class="text">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
+
+</div>
+  
+</div>
+</section>
+
+
+<section>
+<header>滚动菜单</header>
+<nav>
+  <a href="#">
+  <span data-hover="前端学院">我的播客</span>
+  </a>
+ 
+ <a href="#">
+  <span data-hover="JAVA">我的播客</span>
+  </a>
+  <a href="#">
+  <span data-hover="IOS">我的播客</span>
+  </a>
+   <a href="#">
+  <span data-hover="Android">我的播客</span>
+  </a>
+</nav>
+
+</section>
+<section>
+<header>立方体</header>
+<div class="all">
+   <div class="front">
+   aaa
+   </div>
+   <div class="back">
+   bbb
+   </div>
+   <div class="right1">
+   bbb
+   </div>
+   <div class="bottom1">
+   bbb
+   </div>
+</div>
+</nav>
+
+</section>
+
+
+<section>
+<header>canvas</header>
+<div class="canvas">
+<canvas width="800" height="600" >
+</canvas>
+
+</div>
+
+</section>
+
+
+  
+   </div>
+</div>
+</nav>
+
+</section>
+<audio src="sd/2946.wav"/>
+<script src="js/jquery-3.2.1.min.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+var c=$("canvas").get(0);
+c.style.border="1px solid"
+var ctx=c.getContext("2d");
+ctx.beginPath();
+ctx.strokeStyle="black";
+ctx.moveTo(100,100);
+ctx.lineTo(200,100);
+
+ctx.lineTo(100,200);
+
+
+ctx.closePath();
+ctx.fillStyle='red';
+ctx.fill();
+ctx.stroke();
+ctx.beginPath();
+ctx.strokeStyle="black";
+ctx.rect(200,400,200,200);
+ctx.fillStyle="yellow";
+ctx.fillRect(200,400,200,200);
+ctx.clearRect(200,400,100,100);
+ctx.stroke();
+
+
+ctx.beginPath();
+ctx.strokeStyle="black";
+ctx.rect(200,400,200,200);
+ctx.fillStyle="yellow";
+ctx.fillRect(200,400,200,200);
+ctx.clearRect(200,400,100,100);
+ctx.stroke();
+
+//饼状图
+var data=[{value:.2,color:"red",title:"应届生"},{value:.3,color:"blue",title:"社会招生"},{value:.4,color:"green",title:"老学员"},{value:.1,color:"yellow",title:"公开课"}];
+var x=600,y=200,startAng=-90,r=100;
+for(i=0;i<data.length;i++)
+{  angle=data[i].value*360;
+   color=data[i].color;
+   txt=data[i].value*100+"%";
+	
+	ctx.beginPath();
+	ctx.moveTo(x,y);
+	ctx.arc(x,y,r,startAng*Math.PI/180,(startAng+angle)*Math.PI/180);
+	ctx.fillStyle=color;
+	ctx.fill();
+	
+	
+	txtAng=startAng+angle/2;
+	x1=x+Math.cos(txtAng*Math.PI/180)*(r+20);
+	y1=y+Math.sin(txtAng*Math.PI/180)*(r+20);
+	ctx.textAlign="center";
+	ctx.fillText(txt,x1,y1);
+	startAng+=angle;
+	
+	}
+	
+	function Cat(option){
+		
+		this._init1(option);
+		}
+		Cat.prototype={
+			_init1:function(option){
+				this.x=option.x;
+				this.y=option.y
+				alert(this.x);
+				},
+			_prn:function(){
+				var self=this;
+				alert(this.y);
+				
+				}
+			
+			}
+			
+			
+			var cat=new Cat({x:10,y:30});
+
+              cat._prn();
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

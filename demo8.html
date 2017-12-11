@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+.one{width:80px;
+overflow-x:scroll;
+padding:0;
+border:1px solid;}
+
+.one ul{list-style:none;
+padding:0;border:1px solid red;margin:0;}
+
+
+
+.one ul li{float:left;padding:0;margin:0;}
+	.clearfix::before,
+	.clearfix::after{
+		content:"";
+		display:block;
+		height:0;
+		line-height:0;
+		visibility:hidden;
+		clear:both;}
+</style>
+<script src="js/jquery-3.2.1.min.js">
+</script>
+<script>
+$(function(){
+	var li_sum_w=0;
+	$(".one ul li").each(function(index, element) {
+        $el=$(element);
+		li_sum_w+=$el.width();
+    });
+	alert(li_sum_w);
+	$(".one ul").css("width",li_sum_w);
+	});
+</script>
+</head>
+
+<body>
+<div class="one">
+<ul class="clearfix">
+<li>eeeeeeeeeee</li>
+<li>eeeeeeeeeee</li>
+<li>eeeeeeeeeee</li>
+<li>eeeeeeeeeee</li>
+
+</ul>
+</div>
+</div>
+</body>
+</html>

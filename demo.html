@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+body{margin:0 auto;
+padding:0;
+}
+.demo{width:200px;height:200px;background-color:blue;}
+.current{background-color:yellow;transition:all 4s;}
+.demo .child{width:10px;height:10px;background-color:red;}
+.demo .child2{animation:change 5s infinite steps(50);}
+@keyframes change{
+	
+	50%{width:100px;height:100px;background-color:red;}
+	
+	}
+</style>
+<script src="js/jquery-3.2.1.min.js">
+</script>
+</head>
+
+<body>
+<div class="demo">
+<button id="btn">换色</button>
+<button>换色2</button>
+<div class="child"></div>
+</div>
+<audio src="sd/2946.wav"/>
+<audio src="sd/track12.wav"/>
+</body>
+<script type="text/javascript">
+$("#btn").click(function(){$(".demo .child").addClass("child2");
+
+$("audio")[0].load();/*加载声音*/
+$("audio")[0].play();/*播放声音*/
+
+});
+$("button").click(function(){alert($(this).index());});
+</script>
+</html>

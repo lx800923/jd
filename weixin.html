@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>weixin</title>
+<style>
+body{padding:0;
+     margin:0;
+	 overflow:hidden;
+	 }
+</style>
+<script src="js/konva.min.js">
+</script>
+</head>
+
+<body>
+<div id="container">
+</body>
+<script>
+var stage=new Konva.Stage({
+container:'container',
+width:window.innerWidth,
+height:window.innerHeight
+		 });
+		 
+		 var scenceBuild=[buiderHtnl5,buiderCss3,buiderDemo];
+		 var scenceIndex=0;
+		function buiderHtnl5(){}
+		function buiderCss3(){}
+		function buiderDemo(){}
+
+	
+	function addStageEvent(){
+		var startY=0,endY=0;		 
+stage.on("contentMousedown contentTouchstart",function(e){
+	if(e.type=="contentMousedown"){
+		
+		startY=e.evt.screenY;
+		}
+		else{
+			
+			
+		startY=e.evt.touches[0].screenY;
+			}
+
+	
+	});
+	stage.on("contentMousemove contentTouchmove",function(e){
+	if(e.type=="contentMousemove"){
+		
+		endY=e.evt.screenY;
+		}
+		else{
+			
+			
+		endY=e.evt.touches[0].screenY;
+			}
+
+	
+	});
+	
+	stage.on("contentMouseup contentTouchup",function(e){
+	if(endY>startY){
+		
+		//向下滑
+		
+		
+		if(scenceIndex>0)
+		{scenceIndex--;
+		alert("down"+scenceIndex);
+		scenceBuild[scenceIndex]();
+		;}
+		}
+		else if(endY<startY){
+			
+			
+		//向上滑
+		
+		if(scenceIndex<scenceBuild.length)
+		{scenceIndex++;
+		alert("up"+scenceIndex);
+		scenceBuild[scenceIndex]();
+		}
+			}
+	
+	
+	});
+		
+		}
+		addStageEvent();
+</script>
+</html>

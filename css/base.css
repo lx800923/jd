@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+*,::before,after{
+  margin:0;
+  padding:0;
+ -webkit-tap-hightlight-color:transparent;
+	
+	}
+	
+	body{font-size:14px;
+	      font-family:"MS Serif", "New York", serif;
+		  color:black;
+		  margin-top:11px;}
+	a{text-decoration:none;
+	  color:black;}
+	  
+	 ul{list-style:none;}
+	 
+	 input,textarea{
+		 border:none;
+		 resize:none;
+		 outline:none;
+		 -webkit-appearance:none;
+		 }
+	.clearfix::before,
+	.clearfix::after{
+		content:"";
+		display:block;
+		height:0;
+		line-height:0;
+		visibility:hidden;
+		clear:both;}
+

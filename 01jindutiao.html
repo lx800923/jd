@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width-device-width,init-scale=1.0,user-scalable=no">
+<title>无标题文档</title>
+<style>
+body{padding:0;
+     margin:0;
+	 overflow:hidden;
+	 background-color:yellow;}
+</style>
+<script src="js/konva.min.js" type="text/javascript">
+</script>
+</head>
+
+<body>
+<div id="container">
+</div>
+<script>
+function ProgressBar(op){
+	this._init(op);
+	
+	}
+ProgressBar.prototype={
+	
+	_init:function(op){
+		this.x=op.x;
+		this.y=op.y;
+		this.w=op.w;
+		this.h=op.h;
+		this.fillStyle=op.fillStyle ||"red";
+		this.strokeStyle=op.strokeStyle ||"green";
+		this.maxWidth=op.maxWidth;
+		
+		var innerRect=new Konva.Rect({
+		x:this.x,
+		y:this.y,
+		width:this.w,
+		height:this.h,
+		fill:this.fillStyle,
+		cornerRadius:this.h/2,
+		id:"in"
+	
+	}
+);
+
+
+var outRect=new Konva.Rect({
+	x:this.x,
+	y:this.y,
+	width:this.maxWidth,
+	height:this.h,
+	stroke:"green",
+	strokeWidth:4,
+	cornerRadius:this.h/2});
+		
+        this.group=new Konva.Group({x:0,y:0});
+       this.group.add(innerRect);
+		this.group.add(outRect);
+		
+		},
+	changeValue:function(val){
+		if(val>1)
+		{val=val/100;
+			}
+	this.group.findOne("#in").to({
+	width:this.maxWidth*val,
+	duration:1.4*val,
+	easing:Konva.Easings.Linear
+	
+	});
+		},
+	addgrouptolayer:function(arglayer){
+		arglayer.add(this.group);
+		arglayer.draw();
+		}
+	
+	
+	}
+	//-------------------------------------------------------
+	var stage=new Konva.Stage({container:'container',width:window.innerWidth,
+	height:window.innerHeight
+	});
+	var layer=new Konva.Layer();
+	stage.add(layer);
+	var cenX=stage.width()/2;
+	var cenY=stage.height()/2;
+	var p=new ProgressBar({
+		x:stage.width()/8,
+		y:cenY,
+		h:stage.height()/12,
+		maxWidth:3/4*stage.width(),
+		w:100,
+		fillStyle:"red"
+		});
+		p.addgrouptolayer(layer);
+		p.changeValue(0.5);
+		
+</script>
+</body>
+</html>
